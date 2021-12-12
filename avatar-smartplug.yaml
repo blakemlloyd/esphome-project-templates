@@ -1,5 +1,9 @@
 substitutions:
   name: "avatar-smartplug"
+  # Higher value gives lower watt readout
+  current_res: "0.00221"
+  # Lower value gives lower voltage readout
+  voltage_div: "955"
 
 esphome:
   name: "${name}"

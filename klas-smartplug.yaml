@@ -1,0 +1,46 @@
+substitutions:
+  ap_password: "12345678"
+
+esphome:
+  name: "klas-smartplug"
+  name_add_mac_suffix: true
+  platform: ESP8266
+  board: esp01_1m
+  project:
+    name: blakemlloyd.klas-smartplug
+    version: "1.1"
+
+dashboard_import:
+  package_import_url: github://blakemlloyd/esphome-project-templates/klas-smartplug.yaml
+
+wifi:
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    password: "${ap_password}"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO13
+      inverted: True
+    name: "${name}-button"
+    on_press:
+      then:
+        switch.toggle: relay
+
+switch:
+  - platform: gpio
+    id: relay
+    name: "${name}-relay"
+    pin: GPIO15
+    restore_mode: ALWAYS_OFF 

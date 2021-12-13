@@ -1,0 +1,47 @@
+substitutions:
+  ap_password: "12345678"
+  name: "tcpsmart-light"
+
+esphome:
+  name: "${name}"
+  name_add_mac_suffix: true
+  platform: ESP8266
+  board: esp01_1m
+  project:
+    name: blakemlloyd.tcpsmart-light
+    version: "1.2"
+
+dashboard_import:
+  package_import_url: github://blakemlloyd/esphome-project-templates/tcpsmart-light.yaml
+
+wifi:
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    password: "${ap_password}"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+light:
+  - platform: cwww
+    id: mainlight
+    cold_white: cool_output
+    warm_white: warm_output
+    cold_white_color_temperature: 6500 K
+    warm_white_color_temperature: 2700 K
+    restore_mode: ALWAYS_OFF
+    
+output:
+  - platform: esp8266_pwm
+    id: warm_output
+    pin: 13
+  - platform: esp8266_pwm
+    id: cool_output
+    pin: 5

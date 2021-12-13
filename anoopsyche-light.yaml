@@ -15,9 +15,6 @@ dashboard_import:
   package_import_url: github://blakemlloyd/esphome-project-templates/anoopsyche-light.yaml
 
 wifi:
-  ssid: "${wifi_ssid}"
-  password: "${wifi_password}"
-
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     password: "${ap_password}"

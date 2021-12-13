@@ -34,7 +34,7 @@ binary_sensor:
     pin:
       number: GPIO13
       inverted: True
-    name: "${name}-button"
+    id: "button"
     on_press:
       then:
         switch.toggle: relay
@@ -42,6 +42,6 @@ binary_sensor:
 switch:
   - platform: gpio
     id: relay
-    name: "${name}-relay"
+    name: "${name}"
     pin: GPIO15
     restore_mode: ALWAYS_OFF 

@@ -1,5 +1,6 @@
 substitutions:
   name: "anoopsyche-light"
+  ap_password: "12345678"
 
 esphome:
   name: "${name}"

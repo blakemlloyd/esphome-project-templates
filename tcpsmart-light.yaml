@@ -30,18 +30,12 @@ api:
 ota:
 
 light:
-  - platform: cwww
+  - platform: monochromatic
     id: mainlight
-    cold_white: cool_output
-    warm_white: warm_output
-    cold_white_color_temperature: 6500 K
-    warm_white_color_temperature: 2700 K
+    output: pwm_output
     restore_mode: ALWAYS_ON
     
 output:
   - platform: esp8266_pwm
-    id: warm_output
+    id: pwm_output
     pin: 13
-  - platform: esp8266_pwm
-    id: cool_output
-    pin: 5

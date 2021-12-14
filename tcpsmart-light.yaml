@@ -34,6 +34,7 @@ light:
     id: mainlight
     output: pwm_output
     restore_mode: ALWAYS_ON
+    name: "${name}"
     
 output:
   - platform: esp8266_pwm

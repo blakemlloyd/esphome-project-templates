@@ -67,8 +67,6 @@ sensor:
       inverted: True
     cf_pin: GPIO05
     cf1_pin: GPIO14
-    current_resistor: ${current_res}
-    voltage_divider: ${voltage_div}
     current:
       name: "${name} Amperage"
       unit_of_measurement: A

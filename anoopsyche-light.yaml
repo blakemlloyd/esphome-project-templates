@@ -28,6 +28,7 @@ logger:
 api:
 
 ota:
+  platform: esphome
 
 light:
   - platform: cwww
